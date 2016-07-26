@@ -10,10 +10,18 @@ import { Router,Route,IndexRoute,browserHistory } from 'react-router';
 
 class App extends React.Component{
 	render(){
+
+
+		const menuList = [
+			{menu:'Home',linkTo:'home'},
+			{menu:'Portfolio',linkTo:'portfolio'},
+			{menu:'MyProfile',linkTo:'myprofile'}
+		]
+
 		return(
 			<div>
 				<header />
-				<Menu />
+				<Menu menuList = { menuList } />
 				<div className='content'>
 					XXXX
 					{ this.props.children }

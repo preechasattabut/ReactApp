@@ -1,13 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router';
+import List  from './List.js';
 
 class Menu extends React.Component{
+
+	constructor(props){
+		super(props)
+
+	}
+    
 	render(){
+
+		const menuList =  this.props.menuList;
+
 		return(
 			<ul>
-				<li> <Link to='Home' > Home  </Link> </li>
-				<li> <Link to='portfolio' > Portfolio  </Link> </li>
-				<li> <Link to='myprofile' > My Profile  </Link> </li>
+				{ menuList.map( (value,i)=> <List key={i} > 
+					<Link to={value.linkTo} >
+						{value.menu}  
+					</Link>  
+				</List> ) }
 			</ul>
 		)
 	}
